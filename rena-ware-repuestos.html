@@ -369,9 +369,16 @@
   .btn-ghost{background:#EEF2F6;color:var(--navy);}
   .btn-ghost:hover{background:#E2E8EF;}
   .btn-close{
-    position:absolute; top:16px; right:16px;
-    background:none;border:none;cursor:pointer;
-    color:var(--slate);font-size:20px;line-height:1;padding:4px;
+    position:absolute; top:12px; right:12px;
+    background:rgba(238,242,246,0.8);border:none;cursor:pointer;
+    color:var(--navy);font-size:22px;font-weight:700;line-height:1;
+    padding:8px 12px;border-radius:50%;
+    z-index:30;transition:background 0.15s ease;
+    touch-action:manipulation;
+  }
+  .btn-close:hover, .btn-close:active{
+    background:#E2E8EF;
+    color:var(--coral-deep);
   }
   .modal-status{
     font-size:12.5px;
@@ -600,6 +607,15 @@
       </div>
       <div class="modal-status" id="saveStatus"></div>
     </div>
+  </div>
+</div>
+
+
+<!-- PRODUCT DETAIL OVERLAY -->
+<div class="overlay" id="productOverlay">
+  <div class="modal product-modal">
+    <button class="btn-close" id="closeProductModal" onclick="closeProductModal()" title="Cerrar">✕</button>
+    <div id="productDetailContent"></div>
   </div>
 </div>
 
@@ -907,12 +923,7 @@ document.addEventListener("keydown", (e)=>{
 
 </script>
 
-<!-- PRODUCT DETAIL OVERLAY -->
-<div class="overlay" id="productOverlay">
-  <div class="modal product-modal">
-    <button class="btn-close" id="closeProductModal" title="Cerrar">✕</button>
-    <div id="productDetailContent"></div>
-  </div>
+
 </div>
 
 </body>
